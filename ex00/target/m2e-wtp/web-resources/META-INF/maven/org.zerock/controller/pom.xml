@@ -48,7 +48,6 @@
 			<artifactId>spring-test</artifactId>
 			<version>${org.springframework-version}</version>
 			<scope>test</scope>	
-		
 		</dependency>
 
 
@@ -155,8 +154,20 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- Connection Pool -->
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+			<version>2.7.4</version>
+		</dependency>
+		
+		<!-- MyBatis -->
+		
+		
+		
+		
 	</dependencies>
-
 
 
 	<build>

@@ -11,6 +11,28 @@
 		
 		
 		
+		<!-- hikari config -->
+		
+		<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+			<property name="driverClassName"
+				value = "oracle.jdbc.driver.OracleDriver"/>
+			<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+			<property name="username" value="book_ex"/>
+			<property name="password" value="1111"/>
+		</bean>
+		
+		
+		<!-- HikariCP config -->
+		<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource"
+			destroy-method="close">
+			<constructor-arg ref="hikariConfig"/>		
+		</bean>
+		
+		
+		
+		
+		
+		
 		
 		
 </beans>
