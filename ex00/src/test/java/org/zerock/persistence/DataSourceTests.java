@@ -6,6 +6,8 @@ import java.sql.Connection;
 
 import javax.sql.DataSource;
 
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,19 +25,39 @@ public class DataSourceTests {
 	@Setter(onMethod_= {@Autowired})
 	private DataSource dataSource;
 	
-
+	@Setter(onMethod_= {@Autowired})
+	private SqlSessionFactory sqlSessionFactory;
+	
+	
+	
+	//단순히 오라클에 연결
+	/*
+	 * @Test public void testConnection() {
+	 * 
+	 * try(Connection conn = dataSource.getConnection()){
+	 * 
+	 * log.info(conn);
+	 * 
+	 * } catch (Exception e) { fail(e.getMessage()); } }
+	 */
+	
+	
+	//mybatis로 연동
 	@Test
-	public void testConnection() {
-		
-		try(Connection conn = dataSource.getConnection()){
+	public void testMyBatis() {
+		try
+			(SqlSession session = sqlSessionFactory.openSession();
+			Connection conn = session.getConnection();){
 			
+			log.info(session);
 			log.info(conn);
-		
+			
 		} catch (Exception e) {
 			fail(e.getMessage());
 		}
-		
 	}
+	
+	
 	
 	
 	
