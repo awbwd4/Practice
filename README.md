@@ -7,3 +7,4 @@
 *****<코드로 배우는 스프링 웹 프로젝트>로 책 바꿈. 달라진 점 : 이클립스->STS, 자바8, 스프링3->스프링5, MySqlDB-> OracleDB
 
 ****Oracle DB SYSTEM/1111, 포트넘버 9090
+****Oracle DB book_ex/1111 ->실습용
